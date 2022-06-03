@@ -1,0 +1,25 @@
+{
+    "name": "sublang",
+    "displayName": "Sublang",
+    "description": "Subleq macro assembler with more or less readable code",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.67.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "sublang",
+            "aliases": ["Sublang", "sublang"],
+            "extensions": [".sl"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "sublang",
+            "scopeName": "source.sublang",
+            "path": "./syntaxes/sublang.tmLanguage.json"
+        }]
+    }
+}
