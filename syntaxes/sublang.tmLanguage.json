@@ -6,14 +6,33 @@
 			"include": "#keywords"
 		},
 		{
+			"include": "#comments"
+		},
+		{
 			"include": "#strings"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#labels"
+		},
+		{
+			"include": "#functions"
 		}
+
+
+
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.sublang",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "!(var|vars_location|string|stringz|stringl|stringlz|zeroes|define|include)\\s+"
+			},
+			{
+				"name": "keyword.control.sublang",
+				"match": "function\\s+"
 			}]
 		},
 		"strings": {
@@ -26,7 +45,41 @@
 					"match": "\\\\."
 				}
 			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.sublang",
+					"match": "//.+?$"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.sublang",
+					"match": "#-?\\d*"
+				}
+			]
+		},
+		"labels": {
+			"patterns": [
+				{
+					"name": "variable.other.readwrite.sublang",
+					"match": "[A-Za-z_@]+[A-Za-z0-9_@]*:"
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"name": "entity.name.function.sublang",
+					"match": "[A-Za-z_@]+[A-Za-z0-9_@]*\\s*\\("
+				}
+			]
 		}
+
+		
 	},
 	"scopeName": "source.sublang"
 }
